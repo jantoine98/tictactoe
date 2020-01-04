@@ -30,11 +30,11 @@ public class Play
 			try {
 				numInput = in.nextInt();
 				if (!(numInput > 0 && numInput <= 9)) {
-					System.out.println("Invalid input; re-enter slot number:");
+					System.out.println("Entrée invalide; entrez à nouveau le numéro de logement:");
 					continue;
 				}
 			} catch (InputMismatchException e) {
-				System.out.println("Invalid input; re-enter slot number:");
+				System.out.println("Entrée invalide; entrez à nouveau le numéro de logement:");
 				continue;
 			}
 			if (board[numInput-1].equals(String.valueOf(numInput))) {
@@ -47,14 +47,14 @@ public class Play
 				printBoard();
 				winner = checkWinner();
 			} else {
-				System.out.println("Slot already taken; re-enter slot number:");
+				System.out.println("Emplacement déjà pris; entrez à nouveau le numéro de logement:");
 				continue;
 			}
 		}
 		if (winner.equalsIgnoreCase("draw")) {
-			System.out.println("It's a draw! Thanks for playing.");
+			System.out.println("Egalité, merci d'avoir joué");
 		} else {
-			System.out.println("Congratulations! " + winner + "'s have won! Thanks for playing.");
+			System.out.println("Félicitation! " + winner + " a gagné! Merci d'avoir joué.");
 		}
 	}
 
@@ -101,7 +101,7 @@ public class Play
 			else if (a == 8) return "draw";
 		}
 
-		System.out.println(turn + "'s turn; enter a slot number to place " + turn + " in:");
+		System.out.println(turn + "au tour; entrez un numéro d'emplacement à placer " + turn + " dans:");
 		return null;
 	}
 
