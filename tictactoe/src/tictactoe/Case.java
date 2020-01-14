@@ -4,13 +4,14 @@ public class Case
 {
 	private int x;
 	private int y;
-	
+	private boolean devoile;
 	private String contenu;
 	
 	public Case(int x, int y, String contenu)
 	{
 		this.x = x;
 		this.y = y;
+		this.devoile = false;
 		this.contenu = contenu;
 	}
 	
@@ -22,6 +23,11 @@ public class Case
 	public int getY()
 	{
 		return y;
+	}
+	
+	public boolean getDevoile()
+	{
+		return devoile;
 	}
 	
 	public String getContenu()
@@ -39,9 +45,19 @@ public class Case
 		this.y = y;
 	}
 	
+	public void setDevoile(boolean devoile)
+	{
+		this.devoile = devoile;
+	}
+	
 	public void setContenu(String contenu)
 	{
 		this.contenu = contenu;
+	}
+	
+	public String toString()
+	{
+		return "(" + getX() + "," + getY() + ")" + " contenu: " + getContenu() + " , devoile : " + getDevoile();
 	}
 
 }

@@ -9,9 +9,11 @@ public class Play
 	static Scanner in;
 	static String[] board;
 	static String turn;
+	
 
 	public static void main(String[] args) 
 	{
+		Scanner sc = new Scanner(System.in);
 		in = new Scanner(System.in);
 		board = new String[9];
 		turn = "X";
@@ -23,7 +25,7 @@ public class Play
 		System.out.println("2 : pour quitter");
 		System.out.println("--------------------------------");
 		printBoard();
-		
+		int choix = sc.nextInt(); 
 
 		while (winner == null) {
 			int numInput;
@@ -120,6 +122,14 @@ public class Play
 			board[a] = String.valueOf(a+1);
 		}
 
+	}
+	
+	while(nbManches < 3)
+	{
+		if(winner.nbManche = 2)
+		{
+			System.out.println("Le gagnant est :" + winner);
+		}
 	}
 
 }

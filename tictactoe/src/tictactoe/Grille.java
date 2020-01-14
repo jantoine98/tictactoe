@@ -13,8 +13,8 @@ public class Grille
 	public Grille()
 	{
 		cases = new ArrayList<Case>();
-		longueur = 9;
-		largeur = 9;
+		longueur = 3;
+		largeur = 3;
 		
 	}
 	
@@ -46,6 +46,35 @@ public class Grille
 	public void setCases(ArrayList<Case> cases)
 	{
 		this.cases = cases;
+	}
+	
+	public String toString(boolean devoile)
+	{
+		String grilleString = "";
+		
+		for(int i = 0; i < this.longueur; i++)
+		{
+			for(int j = 0; j < this.largeur; j++)
+			{
+				if(devoile == true || this.getCase(i, j).getDevoile())
+				{
+					grilleString += this.getCase(i, j).getContenu() + " ";
+				}
+				else
+				{
+					grilleString += "X ";
+				}
+			}
+			
+			grilleString += "\n";
+		}
+		
+		return grilleString;
+	}
+
+	private Object getCase(int i, int j) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
 
